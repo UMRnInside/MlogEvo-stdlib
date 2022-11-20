@@ -40,7 +40,7 @@ PURE_ARITHMETIC_FUNCTION double atan2_degm(double y, double x) {
 
 PURE_ARITHMETIC_FUNCTION double cos_degm(double x) {
     __asm__ (
-        "op cos %0 %0 0\n"
+        "op cos %0 %1 0\n"
         : "=r" (__mlogev_function_return_value__)
         : "r" (x)
     );
@@ -48,7 +48,7 @@ PURE_ARITHMETIC_FUNCTION double cos_degm(double x) {
 
 PURE_ARITHMETIC_FUNCTION double sin_degm(double x) {
     __asm__ (
-        "op sin %0 %0 0\n"
+        "op sin %0 %1 0\n"
         : "=r" (__mlogev_function_return_value__)
         : "r" (x)
     );
@@ -56,7 +56,7 @@ PURE_ARITHMETIC_FUNCTION double sin_degm(double x) {
 
 PURE_ARITHMETIC_FUNCTION double tan_degm(double x) {
     __asm__ (
-        "op tan %0 %0 0\n"
+        "op tan %0 %1 0\n"
         : "=r" (__mlogev_function_return_value__)
         : "r" (x)
     );
