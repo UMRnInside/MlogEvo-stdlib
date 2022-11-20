@@ -39,7 +39,7 @@ PURE_ARITHMETIC_FUNCTION double asin(double x) {
 
 PURE_ARITHMETIC_FUNCTION double atan(double x) {
     __asm__ (
-        "op angle %0 %1 0\n"
+        "op atan %0 %1 0\n"
         __DEG2RAD_OPERAND0__
         : "=r" (__mlogev_function_return_value__)
         : "r" (x)
