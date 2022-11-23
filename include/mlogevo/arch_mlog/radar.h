@@ -19,13 +19,13 @@
 #define BUILDING_RADAR(result, building, filter1, filter2, filter3, asc, orderby) \
     __asm__ ("radar " filter1 " " filter2 " "  filter3 " " orderby " "\
             "%1 %2 %0" \
-            : "r" (result) \
+            : "=r" (result) \
             : "r" (building), "r" (asc) )
 
 #define UNIT_RADAR(result, building, filter1, filter2, filter3, asc, orderby) \
     __asm__ ("uradar " filter1 " " filter2 " "  filter3 " " orderby " "\
             "0 %1 %0" \
-            : "r" (result) \
+            : "=r" (result) \
             : "r" (asc) )
 
 

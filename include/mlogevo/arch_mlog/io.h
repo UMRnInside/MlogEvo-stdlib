@@ -109,7 +109,7 @@ inline void draw_triangle(double x1, double y1, double x2, double y2, double x3,
     __asm__ volatile (
             "draw triangle %0 %1 %2 %3 %4 %5"
             :
-            : "r" (x1), "r" (y1), "r" (x2), "r" (y2), "r" (x3), "r" (y3),
+            : "r" (x1), "r" (y1), "r" (x2), "r" (y2), "r" (x3), "r" (y3)
     );
 }
 
@@ -119,7 +119,7 @@ inline void draw_triangle_border(double x1, double y1, double x2, double y2, dou
             "draw line %0 %1 %4 %5 0 0\n"
             "draw line %2 %3 %4 %5 0 0"
             :
-            : "r" (x1), "r" (y1), "r" (x2), "r" (y2), "r" (x3), "r" (y3),
+            : "r" (x1), "r" (y1), "r" (x2), "r" (y2), "r" (x3), "r" (y3)
     );
 }
 

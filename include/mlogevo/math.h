@@ -32,9 +32,9 @@
 #define double_t double
 #define float_t float
 
-#include "arch.h"
+#include <mlogevo/arch.h>
 #if MLOGEV_ARCH == MLOGEV_ARCH_MLOG
-#include "mlogevo/arch_mlog/math.h"
+#include <mlogevo/arch_mlog/math.h>
 #endif
 
 #endif // _MLOGEVO_MATH_H

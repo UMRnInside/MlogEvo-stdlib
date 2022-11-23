@@ -5,9 +5,9 @@
 #ifndef _MLOGEVO_RADAR_H
 #define _MLOGEVO_RADAR_H
 
-#include "arch.h"
+#include <mlogevo/arch.h>
 #if MLOGEV_ARCH == MLOGEV_ARCH_MLOG
-#include "mlogevo/arch_mlog/radar.h"
+#include <mlogevo/arch_mlog/radar.h>
 #endif
 
 #endif // _MLOGEVO_RADAR_H

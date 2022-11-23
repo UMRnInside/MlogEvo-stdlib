@@ -81,7 +81,7 @@ PURE_ARITHMETIC_FUNCTION double tan(double x) {
         : "r" (x)
     );
 }
-#include "mlogevo/arch_mlog/degree_measures.h"
+#include <mlogevo/arch_mlog/degree_measures.h>
 
 // 7.12.5 Hyperbolic functions
 // https://en.wikipedia.org/wiki/Hyperbolic_functions

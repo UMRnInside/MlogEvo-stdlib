@@ -18,7 +18,7 @@
 inline struct MlogObject getlink(int i) {
     __asm__ ASM_QUALIFIER (
             "gelink %0 %1"
-            : "r" (__mlogev_function_return_value__)
+            : "=r" (__mlogev_function_return_value__)
             : "r" (i)
     );
 }
@@ -70,8 +70,8 @@ control_color(struct MlogObject illuminator, double packed_color) {
 }
 
 #define SENSOR(result, attribute, target_object) \
-    __asm__ ("sensor %0 %1 " attribute : \
-            : "r" (result) \
+    __asm__ ("sensor %0 %1 " attribute "" \
+            : "=r" (result) \
             : "r" (target_object) )
 
 #undef __STR
