@@ -1,9 +1,14 @@
-/* Message board and Display I/O for mlog.
+/* Message board, Display and SENSOR for mlog.
  * This file is part of MlogEvo "standard" library.
  */
 
 #ifndef _ARCH_MLOG_IO_H
 #define _ARCH_MLOG_IO_H
+
+#define SENSOR(result, attribute, target_object) \
+    __asm__ ("sensor %0 %1 " attribute "" \
+            : "=r" (result) \
+            : "r" (target_object) )
 
 #define PRINT_STRING(string_literal) \
     __asm__ volatile ("print \"" string_literal "\"" )
@@ -137,6 +142,15 @@ inline void draw_image(double x, double y, struct MlogObject object, double size
             : \
             : "r" (x), "r" (y), "r" (size), "r" (rotation) \
     )
+
+inline void draw_image(double x, double y, struct MlogObject object, double size, double rotation) {
+    __asm__ volatile (
+            "draw image %0 %1 %2 %3 %4 0" 
+            :
+            : "r" (x), "r" (y), "r" (object), "r" (size), "r" (rotation)
+    );
+}
+
 
 
 #define drawflush draw_flush

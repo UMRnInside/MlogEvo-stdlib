@@ -69,11 +69,6 @@ control_color(struct MlogObject illuminator, double packed_color) {
     );
 }
 
-#define SENSOR(result, attribute, target_object) \
-    __asm__ ("sensor %0 %1 " attribute "" \
-            : "=r" (result) \
-            : "r" (target_object) )
-
 #undef __STR
 #undef ASM_QUALIFIER
 #endif // __ARCH_MLOG_BLOCK_CONTROL_H__
