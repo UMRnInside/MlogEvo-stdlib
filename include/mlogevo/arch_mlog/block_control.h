@@ -17,7 +17,7 @@
 
 inline struct MlogObject getlink(int i) {
     __asm__ ASM_QUALIFIER (
-            "gelink %0 %1"
+            "getlink %0 %1"
             : "=r" (__mlogev_function_return_value__)
             : "r" (i)
     );
