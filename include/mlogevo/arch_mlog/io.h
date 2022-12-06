@@ -10,6 +10,11 @@
             : "=r" (result) \
             : "r" (target_object) )
 
+#define SENSOR_UNIT(result, attribute) \
+    __asm__ ("sensor %0 @unit " attribute "" \
+            : "=r" (result) )
+
+
 #define PRINT_STRING(string_literal) \
     __asm__ volatile ("print \"" string_literal "\"" )
 

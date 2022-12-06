@@ -6,6 +6,7 @@
 #include <mlogevo/io.h>
 #include <mlogevo/math.h>
 #include <mlogevo/mem.h>
+#include <mlogevo/misc.h>
 #include <mlogevo/radar.h>
 #include <mlogevo/unit.h>
 
