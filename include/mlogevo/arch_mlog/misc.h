@@ -16,4 +16,10 @@ inline void wait(double seconds) {
     __asm__ volatile ("wait %0" : : "r"(seconds) );
 }
 
+inline double randfloat(double max) {
+    __asm__ ("op rand %0 %1 0" 
+            : "=r" (__mlogev_function_return_value__)
+            : "r" (max) );
+}
+
 #endif //_ARCH_MLOG_MISC_H
