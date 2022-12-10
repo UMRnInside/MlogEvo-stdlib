@@ -9,11 +9,12 @@ It's hard to distribute MlogEvo Standard Library with MlogEvo, for the `egg` for
 # Use git
 git clone https://github.com/UMRnInside/MlogEvo-stdlib --depth 1
 ```
-2. Install this into Python include directory
+2. Install this into Python include directory.
 ```bash
 cd MlogEvo-stdlib
 python3 install_stdlib.py
 ```
+Of course, you can literally copy-paste the whole `mlogevo` directory instead.
 
 ## Uninstall
 ```bash
