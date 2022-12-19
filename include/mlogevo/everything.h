@@ -7,6 +7,7 @@
 #include <mlogevo/math.h>
 #include <mlogevo/mem.h>
 #include <mlogevo/misc.h>
+#include <mlogevo/mlog_builtins.h>
 #include <mlogevo/mlog_object.h>
 #include <mlogevo/radar.h>
 #include <mlogevo/unit.h>

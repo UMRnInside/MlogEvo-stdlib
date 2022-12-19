@@ -1,13 +1,11 @@
-#ifndef _MLOGEVO_MLOG_OBJECT_H
-#define _MLOGEVO_MLOG_OBJECT_H
-
-#define _MOBJ struct MlogObject*
-
-
 /* 
  * List of senseable attributes
  * Assume MlogObject is senseable (buildings, units, etc.)
  */
+#ifndef _MLOGEVO_MLOG_OBJECT_H
+#define _MLOGEVO_MLOG_OBJECT_H
+
+#define _MOBJ struct MlogObject*
 
 struct MlogObject {
     // Serpulo items
@@ -17,6 +15,7 @@ struct MlogObject {
     int surge_alloy, spore_pod, blast_compound, pyratite;
     // Erkeir items
     int beryllium, tungsten, oxide, carbide;
+    int fissile_matter, dormant_cyst;
     // Serpulo liquids
     double water, slag, oil, cryofluid;
     // Erkeir liquids
