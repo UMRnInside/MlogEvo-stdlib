@@ -56,6 +56,7 @@ struct MlogObject {
     _MOBJ config;
 
     // A payload may be contained by units or buildings
+    int payloadCount;
     _MOBJ payloadType;
 
     // Unit-related
