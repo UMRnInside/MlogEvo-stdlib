@@ -3,7 +3,10 @@
 
 #define mlogobj struct MlogObject
 // TODO: implement const and volatile
+// TODO: split it into multiple files? 
 // NOTE: some fields are MUTABLE!
+// list of global variables:
+// https://github.com/Anuken/Mindustry/blob/master/core/src/mindustry/logic/GlobalVars.java
 struct MLOG_BUILTINS {
     // Processor builtin constants/variables
     // https://mindustrygame.github.io/wiki/logic/3-variables/#processor-variables-and-constants
@@ -19,10 +22,16 @@ struct MLOG_BUILTINS {
     const volatile int tick;
     const volatile int mapw, maph;
     const volatile mlogobj unit;
+
+    // Introduced in Build 140, not required though
+    const double degToRad, radToDeg;
     // Lookup
     const int unitCount, itemCount, liquidCount, blockCount;
     // sensor @controlled
     const int ctrlProcessor, ctrlPlayer, ctrlFormation;
+
+    // Teams
+    const mlogobj derelict, sharded, crux, mails, green, blue, neoplastic;
 
     // Serpulo items
     const mlogobj copper, lead, metaglass, graphite;
@@ -56,6 +65,11 @@ struct MLOG_BUILTINS {
     const mlogobj cleroi, anthicus, tecta, collaris;
     const mlogobj elude, avert, obviate, quell;
     const mlogobj disrupt, evoke, incite, emanate;
+
+    // @air (for unit discarding items)
+    const mlogobj air;
+    // used as a special value for any environmental solid block
+    const mlogobj solid;
 
     // Serpulo buildings
     const mlogobj graphite_press, multi_press, silicon_smelter, silicon_crucible;
