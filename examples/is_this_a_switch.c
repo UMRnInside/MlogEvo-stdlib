@@ -10,14 +10,12 @@ extern struct MlogObject message1;
 
 void main() {
     for (int i=0;i<builtins.links;i++) {
-        struct MlogObject target = getlink(i);
-        if (target == message1) {
-            continue;
-        }
-        if (target.type == builtins.Switch) {
-            PRINT_STRING("Link #");
-            print_int(i);
-            PRINT_STRING(" is a switch\\n");
+        if (getlink(i).type == builtins.Switch) {
+            //PRINT_STRING("Link #");
+            //print_int(i);
+            //PRINT_STRING(" is a switch\\n");
+            // MlogEvo's first builtin function: print
+            print("Link #", i, " is a switch.\n");
         }
     }
     print_flush(message1);
