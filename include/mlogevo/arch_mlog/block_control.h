@@ -6,17 +6,11 @@
 #define _ARCH_MLOG_BLOCK_CONTROL_H
 #define __STR(x) #x
 
-#ifdef MLOGEV_VOLATILE_CONTROL_WANTED
-#define ASM_QUALIFIER volatile
-#else
-#define ASM_QUALIFIER
-#endif
-
 // On mlog arch, we have __mlogev_function_return_value__
 // NOTE: drawflush/printflush is not defined here
 
 inline struct MlogObject getlink(int i) {
-    __asm__ ASM_QUALIFIER (
+    __asm__ (
             "getlink %0 %1"
             : "=r" (__mlogev_function_return_value__)
             : "r" (i)
@@ -26,7 +20,7 @@ inline struct MlogObject getlink(int i) {
 #define control_enabled control_toggle
 inline void
 control_toggle(struct MlogObject building, int status) {
-    __asm__ ASM_QUALIFIER (
+    __asm__ volatile (
             "control enabled %0 %1 0 0 0"
             : /* no output */
             : "r" (building), "r" (status)
@@ -35,7 +29,7 @@ control_toggle(struct MlogObject building, int status) {
 
 inline void
 control_shoot(struct MlogObject turret, double x, double y, int should_shoot) {
-    __asm__ ASM_QUALIFIER (
+    __asm__ volatile (
             "control shoot %0 %1 %2 %3 0"
             : /* no output */
             : "r" (turret), "r" (x), "r" (y), "r" (should_shoot)
@@ -44,7 +38,7 @@ control_shoot(struct MlogObject turret, double x, double y, int should_shoot) {
 
 inline void 
 control_shootp(struct MlogObject turret, struct MlogObject target, int should_shoot) {
-    __asm__ ASM_QUALIFIER (
+    __asm__ volatile (
             "control shootp %0 %1 %2 %3 0"
             : /* no output */
             : "r" (turret), "r" (target), "r" (should_shoot)
@@ -53,7 +47,7 @@ control_shootp(struct MlogObject turret, struct MlogObject target, int should_sh
 
 inline void
 control_config(struct MlogObject building, struct MlogObject config) {
-    __asm__ ASM_QUALIFIER (
+    __asm__ volatile (
             "control config %0 %1 0 0 0"
             : /* no output */
             : "r" (building), "r" (config)
@@ -62,7 +56,7 @@ control_config(struct MlogObject building, struct MlogObject config) {
 
 inline void
 control_color(struct MlogObject illuminator, double packed_color) {
-    __asm__ ASM_QUALIFIER (
+    __asm__ volatile (
             "control color %0 %1 0 0 0"
             : /* no output */
             : "r" (illuminator), "r" (packed_color)
