@@ -6,14 +6,9 @@
 #define _ARCH_MLOG_IO_H
 
 #define SENSOR(result, attribute, target_object) \
-    __asm__ ("sensor %0 %1 " attribute "" \
+    __asm__ ("sensor %0 %1 %2" \
             : "=r" (result) \
-            : "r" (target_object) )
-
-#define SENSOR_UNIT(result, attribute) \
-    __asm__ ("sensor %0 @unit " attribute "" \
-            : "=r" (result) )
-
+            : "r" (target_object), "r"(attribute) )
 
 #define PRINT_STRING(string_literal) \
     __asm__ volatile ("print \"" string_literal "\"" )
