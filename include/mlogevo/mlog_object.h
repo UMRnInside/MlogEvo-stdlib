@@ -51,6 +51,7 @@ struct MlogObject {
     int size;
     int team;
     _MOBJ type;
+    int controlled;
     _MOBJ controller;
     _MOBJ name;
     _MOBJ config;
